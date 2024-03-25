@@ -1,0 +1,7 @@
+plot.new()
+plot.window(xlim = c(0, 10), ylim = c(0, 20))
+title(main = "Empty Plot with Specified Axis Limits")
+
+# Add axes
+axis(side = 1)  # x-axis
+axis(side = 2)  # y-axis
