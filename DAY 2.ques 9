@@ -1,0 +1,10 @@
+v1=c(1,2,34,5,65,66)
+v2=c(99,76,88,78,100,34)
+m=matrix(11:20,nrow=3,ncol=3,byrow=TRUE)
+m2=matrix(21:30,nrow=3,ncol=3,byrow=TRUE)
+custom_function <- function(x) {
+  return(x^2)
+}
+
+l=list(v1,v2,m,m2,custom_function(3))
+print(l)
