@@ -1,0 +1,3 @@
+l=list("name"=c("nav","kav","bav"),"age"=c(12,13,15))
+# List all objects in memory
+print(ls(l))
