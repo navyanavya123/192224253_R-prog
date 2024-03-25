@@ -1,0 +1,6 @@
+age=as.numeric(readline())
+name=readline()
+print(name)
+print(age)
+# Print R version
+cat("R Version:", R.version$version.string, "\n")
