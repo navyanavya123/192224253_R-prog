@@ -1,0 +1,6 @@
+first10=letters[1:10]
+last10=toupper(tail(letters,10))
+midal=toupper(tail(letters[22:24]))
+print(first10)
+print(last10)
+print(midal)
