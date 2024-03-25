@@ -1,0 +1,10 @@
+matrix1 <- matrix(1:6, nrow = 2)
+matrix2 <- matrix(7:12, nrow = 2)
+
+# Combine matrices by column using cbind()
+combined_by_column <- cbind(matrix1, matrix2)
+
+# Combine matrices by row using rbind()
+combined_by_row <- rbind(matrix1, matrix2)
+print(combined_by_column)
+print(combined_by_row)
