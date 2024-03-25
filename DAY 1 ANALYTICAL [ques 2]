@@ -1,0 +1,24 @@
+numeric_vector <- c(1, 2, 3, 4, 5, 6)
+complex_vector <- c(1 + 2i, 3 + 4i, 5 + 6i, 7 + 8i, 9 + 10i, 11 + 12i)
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
+character_vector <- c("apple", "banana", "orange", "grape", "kiwi", "mango")
+
+# Print the vectors
+cat("Numeric Vector:", numeric_vector, "\n")
+cat("Complex Vector:", complex_vector, "\n")
+cat("Logical Vector:", logical_vector, "\n")
+cat("Character Vector:", character_vector, "\n")
+
+
+# Given list
+given_list <- list(g1 = "item1", g2 = "item2", g3 = "item3")
+
+# New item to add
+g4 <- "R Prog"
+
+# Add the new item to the given list
+given_list <- append(given_list, list(g4=g4))
+
+# Print the updated list
+print(given_list)
+
