@@ -1,0 +1,20 @@
+traffic_data <- data.frame(day = 1:30, accidents = c(10, 8, 9, 11, 12, 15, 14, 16, 18, 20, 
+                                                     22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 
+                                                     42, 44, 46, 48, 50, 52, 54, 56, 58, 60))
+
+# Fit a Poisson regression model
+model <- glm(accidents ~ day, data = traffic_data, family = "poisson")
+
+# Summarize the model output
+summary(model)
+
+# Interpret the coefficient for 'day'
+# The coefficient for 'day' represents the change in the log count of accidents for a one-unit increase in 'day'.
+# For example, if the coefficient is 0.05, it means that for each additional day, the log count of accidents increases by 0.05.
+
+# Predict the number of accidents on the 31st day
+day_31 <- data.frame(day = 31)
+predicted_accidents <- predict(model, newdata = day_31, type = "response")
+
+# Report the predicted count
+cat("Predicted number of accidents on the 31st day:", round(predicted_accidents))
