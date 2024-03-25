@@ -1,0 +1,11 @@
+transaction1 <- structure(list(amount = 500000, date = as.Date("12/07/2000", format = "%d/%m/%Y"), description = "computers"), class = "transaction")
+transaction2 <- structure(list(amount = 200000, date = as.Date("13/08/2000", format = "%d/%m/%Y"), description = "Software"), class = "transaction")
+transaction3 <- structure(list(amount = 100000, date = as.Date("14/09/2000", format = "%d/%m/%Y"), description = "Home Product"), class = "transaction")
+
+# Access attributes
+print(transaction1$amount)
+print(transaction1$date)
+print(transaction1$description)
+
+
+
