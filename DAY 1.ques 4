@@ -1,0 +1,2 @@
+r=sample(-50:50,replace=TRUE)
+print(r)
