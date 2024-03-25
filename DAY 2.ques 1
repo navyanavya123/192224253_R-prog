@@ -1,0 +1,7 @@
+s="hello"
+c=strsplit(s,"")[[1]]
+su=unique(s)
+n=c(2,1,4,2,5,3,1)
+nu=unique(n)
+print(su)
+print(nu)
