@@ -1,0 +1,6 @@
+v=c(12,22,32,54,66,87,88,67)
+a=array(v,dim=c(2,3,2))
+print(a)
+dimnames(a,list(c("r1","r2"),c("c1","c2","c3"),c("d1","d2")))
+print(a)
+
