@@ -1,0 +1,6 @@
+mat <- matrix(sample(1:100, 12, replace=FALSE), nrow=3)
+colnames(mat) <- c("uno", "dos", "tres", "cuatro")
+rownames(mat) <- c("x", "y", "z")
+mat_scaled <- mat / 10
+mat_scaled
+
