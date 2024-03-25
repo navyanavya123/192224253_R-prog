@@ -1,0 +1,5 @@
+getwd()
+setwd("C:/Users/Admin/Documents")
+getwd()
+f=read.csv("input.csv")
+print(f)
