@@ -1,0 +1,4 @@
+set.seed(123)
+nums <- rnorm(n = 10, mean = 5, sd = 2)
+freq_table <- as.data.frame(table(nums))
+print(freq_table)
