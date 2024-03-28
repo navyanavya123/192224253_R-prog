@@ -1,0 +1,31 @@
+USArrests
+
+# Summary of the dataset
+summary(USArrests)
+
+# The state which saw the largest total number of rape
+USArrests[which.max(USArrests$Rape), "Rape"]
+
+# The states with the max & min crime rates for murder
+USArrests[c(which.max(USArrests$Murder), which.min(USArrests$Murder)), "Murder"]
+hist(USArrests$Murder)
+
+# Density plot
+density(USArrests$Murder)
+
+# Adding the graph for the relationship between murder arrest rate and proportion of the population that is urbanised by state
+plot(USArrests$Murder, USArrests$UrbanPop,
+     main = "Murder Arrest Rate vs. Urbanisation",
+     xlab = "Murder Arrest Rate",
+     ylab = "Urbanisation")
+
+# Adding assault arrest rates by colouring the points
+points(USArrests$Murder, USArrests$Assault,
+       col = colorRampPalette(c("blue", "red"))(100)[USArrests$Assault])
+
+# Bar graph
+barplot(USArrests$Murder,
+        names.arg = row.names(USArrests),
+        las = 2,
+        ylab = "Murder Rate per 100,000",
+        main = "Murder Rate in the United States in 1973")
