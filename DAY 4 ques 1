@@ -1,0 +1,44 @@
+# Load necessary libraries
+library(datasets)
+library(dplyr)
+library(caTools)
+library(nnet)
+
+# Step 1: Load iris dataset and split into training and test sets
+data(iris)
+set.seed(123) # for reproducibility
+split <- sample.split(iris$Species, SplitRatio = 0.8)
+train_data <- subset(iris, split == TRUE)
+test_data <- subset(iris, split == FALSE)
+
+# Step 2: Create logistic regression model
+logistic_model <- multinom(Species ~ Petal.Width + Petal.Length, data = train_data)
+
+# Step 3: Predict probabilities using test data
+predicted_probs <- predict(logistic_model, newdata = test_data, type = "probs")
+
+# Step 4: Create confusion matrix
+predicted_classes <- colnames(predicted_probs)[apply(predicted_probs, 1, which.max)]
+conf_matrix <- table(predicted_classes, test_data$Species)
+conf_matrix
+
+# Step 5: Calculate mean, median, mode
+values <- c(90, 50, 70, 80, 70, 60, 20, 30, 80, 90, 20)
+mean_val <- mean(values)
+median_val <- median(values)
+mode_val <- names(sort(table(values), decreasing = TRUE))[1]
+
+# Print mean, median, mode
+print(paste("Mean:", mean_val))
+print(paste("Median:", median_val))
+print(paste("Mode:", mode_val))
+
+# Step 6: Find 2nd highest and 3rd lowest values
+sorted_values <- sort(unique(values))
+second_highest <- sorted_values[length(sorted_values) - 1]
+third_lowest <- sorted_values[3]
+
+# Print 2nd highest and 3rd lowest values
+print(paste("Second highest value:", second_highest))
+print(paste("Third lowest value:", third_lowest))
+
