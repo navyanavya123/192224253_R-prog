@@ -1,0 +1,16 @@
+data("ChickWeight")
+
+# (i) Order the data frame in ascending order by "weight" grouped by "diet" and extract the last 6 records
+last_six <- tail(with(ChickWeight, ChickWeight[order(weight, Diet), ]), 6)
+
+# (ii) Perform melting function based on "Chick", "Time", "Diet" features as ID variables
+library(reshape2)
+
+melted_data <- melt(ChickWeight, id.vars = c("Chick", "Time", "Diet"))
+
+# Viewing the results
+print("Last 6 records ordered by weight grouped by diet:")
+print(last_six)
+
+print("Melted data based on 'Chick', 'Time', and 'Diet' features:")
+print(head(melted_data))
