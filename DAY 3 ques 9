@@ -1,0 +1,28 @@
+data(iris)
+dim(iris)
+str(iris)
+summary(iris)
+
+aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=mean)
+aggregate(iris[,1:4], by=list(Species=iris$Species), FUN=sd)
+
+quantile(iris$Sepal.Width)
+quantile(iris$Sepal.Length)
+
+iris1 <- iris
+iris1$Sepal.Length.Cate <- cut(iris$Sepal.Length, 
+                               breaks=quantile(iris$Sepal.Length, probs=c(0, 0.25, 0.5, 0.75, 1)), 
+                               labels=c("Q1", "Q2", "Q3", "Q4"), 
+                               include.lowest=TRUE)
+
+
+aggregate(iris1[,1:4], by=list(Species=iris1$Species, Sepal.Length.Cate=iris1$Sepal.Length.Cate), FUN=mean)
+
+
+
+aggregate(iris1[,1:4], by=list(Species=iris1$Species, Sepal.Length.Cate=iris1$Sepal.Length.Cate), FUN=mean) * 
+  aggregate(iris1[,1:4], by=list(Species=iris1$Species, Sepal.Length.Cate=iris1$Sepal.Length.Cate), FUN=length)
+
+
+library(reshape2)
+dcast(data=iris1, Species ~ Sepal.Length.Cate, value.var="Sepal.Length", fun.aggregate=mean)
