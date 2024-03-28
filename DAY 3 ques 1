@@ -1,0 +1,6 @@
+mat1 = matrix(c(1:9), nrow = 3, ncol = 3)
+mat2 = matrix(c(11:19), nrow = 3, ncol = 3)
+ar1 = array(c(mat1, mat2), dim = c(3,3,2))
+print(ar1)
+print(ar1[, , 2][2,])
+print(ar1[3,3,1])
