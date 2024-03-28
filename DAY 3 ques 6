@@ -1,0 +1,5 @@
+data(airquality)
+print(class(airquality))
+result = airquality[order(airquality[,1], airquality[,2]),]
+result = result[,-c(2,3)]
+print(result)
