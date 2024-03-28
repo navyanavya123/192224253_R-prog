@@ -1,0 +1,23 @@
+nums <- c(10, 20, 30, 40, 50, 60)
+
+# Initialize variables to store maximum and minimum values
+max_value <- nums[1]  # Initialize with the first element
+min_value <- nums[1] 
+for(i in nums){
+  if(i>max_value){
+    max_value=i
+  }else if(i<=min_value){
+    min_value=i
+  }
+}
+print(max_value)
+print(min_value)
+
+s=seq(20,50)
+m=mean(seq(20,60))
+su=sum(seq(51,91))
+print(s)
+print(m)
+print(su)
+  
+
