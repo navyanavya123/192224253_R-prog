@@ -1,0 +1,7 @@
+d=data.frame(height=c(66,62,63,70,74),GPA=c(3.80,3.78,3.88,3.72,3.69))
+print(d)
+m=mean(d$height)
+mg=mean(d$GPA)
+print(m)
+print(mg)
+ 
